@@ -1,0 +1,20 @@
+mp_user_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: MPUserBundle:Default:index }
+
+
+mp_user_index:
+    path:     /user/index
+    defaults: { _controller: MPUserBundle:User:index }
+    
+mp_user_add:
+    path:     /user/add
+    defaults: { _controller: MPUserBundle:User:add }
+    
+ #  mp_user_edit:
+ #    path:     /user/edit
+ #   defaults: { _controller: MPUserBundle:User:edit/{id} }    
+    
+ # mp_user_delete:
+ #   path:     /user/delete
+ #mysq   defaults: { _controller: MPUserBundle:User:delete/{id} } 

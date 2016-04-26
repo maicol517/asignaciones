@@ -1,0 +1,7 @@
+mp_user:
+    resource: "@MPUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
