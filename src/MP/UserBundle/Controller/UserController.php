@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function indexAction()
     {
-      //  return $this->render('MPUserBundle:Default:index.html.twig', array('name' => $name));
+      //  return $this->render('MPUserBundle:Default:index.html.twig', array('name' => $name)); /
     
     //return new Response('Welcome to user');
       
@@ -18,7 +18,7 @@ class UserController extends Controller
       
       $users = $em->getRepository('MPUserBundle:User')->findAll();
    
-          $res = 'Lista de Usuarios: <br/>'; 
+     /*     $res = 'Lista de Usuarios: <br/>'; 
    
    foreach ($users as $user) {
        
@@ -27,18 +27,25 @@ class UserController extends Controller
    }
    
    return new Response($res);
+   */
    
+   return $this->render('MPUserBundle:User:index.html.twig', array('users' => $users ));
    
    }
    
-       public function addAction()
+       public function viewAction($id)
     {
       
-    return new Response('Welcome to ADD');
+    $repository = $this->getDoctrine()->getRepository('MPUserBundle:User');
+    
+    $user = $repository->find ($id);
+    
+    //$user = $repository->findOneByUsername($nombre);
       
- 
+    //return new Response('Usuarios; '. $user->getUsername().' con email '.$user->getEmail());
    
    
+   return $this->render('MPUserBundle:User:view.html.twig', array('users' => $users ));
    
    }
     

@@ -7,9 +7,10 @@ mp_user_index:
     path:     /user/index
     defaults: { _controller: MPUserBundle:User:index }
     
-mp_user_add:
-    path:     /user/add
-    defaults: { _controller: MPUserBundle:User:add }
+mp_user_view:
+    path:     /user/view/{id}
+    defaults: { _controller: MPUserBundle:User:view }
+    
     
  #  mp_user_edit:
  #    path:     /user/edit
